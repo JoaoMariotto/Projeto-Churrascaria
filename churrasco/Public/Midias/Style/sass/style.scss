@@ -1,0 +1,240 @@
+//Necessário a instalação do nodeJs e do sass pelo terminal -- Lembrar
+
+//variaveis
+$body-background-color: #000;
+$color-text-link: #000;
+$color-text-header: #000;
+$color: #fff;
+$background-header: rgb(255, 89, 0);
+$madeira: #935220;
+$laranja: rgb(255, 89, 0);
+$vermelho-spans: #b30000;
+$header-hight: 70px;
+$font-normal: Geizer;
+$font-diferente: BlackOut;
+
+/***********
+Geral*/
+@font-face {
+    font-family: $font-diferente;
+    src: url(../../Fonte/Blackout.otf);
+}
+@font-face {
+    font-family: $font-normal;
+    src: url(../../Fonte/Geizer.otf);
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+} 
+  /* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+}
+  /* Handle */
+::-webkit-scrollbar-thumb {
+    background: $background-header; 
+}
+  /* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: $madeira; 
+}
+body{
+    overflow-x: hidden;
+    background-color: $body-background-color;
+    max-width: 100%;
+    min-width: 300px;
+    color: $color;
+    font-size: 25px;
+    font-family: $font-normal;
+}
+a{
+    text-decoration: none;
+    color: $color-text-link;
+}
+/******
+Header*/
+.header{
+    background: $background-header;
+    height: $header-hight;
+    color: $color-text-header;
+}
+.titulo{
+    margin-left: 15px;
+    margin-top: 15px;
+}
+nav ul li{
+    margin-right: 10px; 
+    position: relative;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    a{
+        padding: 20px;
+        i{
+            margin-left: 5px;
+        }
+    } 
+}
+.cobertura {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 0;
+    background-color: rgba(157, 55, 0, 0.5);
+    transition: height 0.3s ease;
+    pointer-events: none;
+}
+nav ul li:hover .cobertura{
+    cursor: pointer;
+    height: 100%;
+}
+
+/*********
+Main*/
+main{
+    margin-bottom: 50px;
+    #container{
+        margin-top: 25px;
+    }
+    #principal{
+        margin-top: 75px;
+        button{
+            color: $color;
+            background-image: url(../../Imgs/Index/parteMadeira.png) ;
+            border-radius: 15px;
+            border: none;
+            padding: 15px;
+            margin-bottom: 15px;
+            width: 470px;
+            height: 90px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        button:hover {
+            transform: translateX(390px); 
+        }
+    }
+    #tabua{
+        z-index: 999;
+    }
+    #ficha{
+        z-index: 1;
+        margin-left: -330px;
+        margin-top: 250px;
+    }
+}
+
+.icon{
+    margin-left: 20px;
+}   
+.degrade{
+    background-image: url(../../Imgs/Index/degrade.png);
+    height: 100px;
+
+}
+.frase-color{
+    font-family: $font-diferente;
+    color: $vermelho-spans;
+}
+
+/********
+footer*/
+footer{
+    margin-top: 100px;
+    width: 100%;
+    height: 300px;
+    background-color: $laranja;
+    color: #000;
+
+
+    .button {
+       
+        width: 60px;
+        height: 60px;
+        cursor: pointer;
+        color: $laranja;
+        background: #000;
+        overflow: hidden;
+        border-radius: 50px;
+        transition: all 0.3s ease-in-out;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .button span {
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 60px;
+        margin-left: 10px;
+    }
+    
+    .button:hover {
+        width: 200px;
+    }
+    
+    .button:nth-child(1):hover .icon {
+        background: #e1306c;
+    }
+    
+    .button:nth-child(2):hover .icon {
+        background: #4267b2;
+    }
+    
+    .button:nth-child(3):hover .icon {
+        background: #1da1f2;
+    }
+    .button:nth-child(1) span {
+        color: #e1306c;
+    }
+    
+    .button:nth-child(2) span {
+        color: #4267b2;
+    }
+    
+    .button:nth-child(3) span {
+        color: #1da1f2;
+    }
+    .button .icon {
+	width: 60px;
+	height: 60px;
+	text-align: center;
+	border-radius: 50px;
+	display: inline-block;
+    margin-left: -1px;
+	transition: all 0.3s ease-in-out;
+    }
+
+    .button .icon i {
+    	font-size: 25px;
+    	line-height: 60px;
+    	transition: all 0.3s ease-in-out;
+    }
+
+    .button:hover i {
+    	color: #fff;
+    }
+
+    footer:has(p) {
+    	padding: 3px;
+    	display: block;
+    	text-align: center;
+    }
+
+    p:first-child a {
+    	color: $vermelho-spans;
+    	text-decoration: underline;
+    }
+
+    footer a:hover {
+    	color: #fafaff;
+    }
+    .clear{
+        clear: both;
+    }
+}
